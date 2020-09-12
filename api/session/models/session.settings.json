@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sessions",
+  "info": {
+    "name": "Session"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "session_name": {
+      "type": "string"
+    },
+    "classes": {
+      "collection": "class",
+      "via": "sessions",
+      "dominant": true
+    },
+    "scheduled_at": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "string"
+    },
+    "users": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "sessions",
+      "dominant": true
+    }
+  }
+}
